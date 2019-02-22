@@ -687,35 +687,35 @@ export default ExportedComponent
   )
 }
 
-const getDocById = async ({
-  activeDocId = '',
-  doc = {},
-  setState = () => {},
-  handleState = () => {}
-}) => {
-  if (activeDocId && activeDocId === doc.id) {
-    return
-  }
+// const getDocById = async ({
+//   activeDocId = '',
+//   doc = {},
+//   setState = () => {},
+//   handleState = () => {}
+// }) => {
+//   if (activeDocId && activeDocId === doc.id) {
+//     return
+//   }
 
-  handleState({ isLoading: true })
+//   handleState({ isLoading: true })
 
-  try {
-    const { data } = await api({
-      url: `/docs/${doc.id}`,
-      method: 'GET'
-    })
+//   try {
+//     const { data } = await api({
+//       url: `/docs/${doc.id}`,
+//       method: 'GET'
+//     })
 
-    setState({
-      model: data.contents,
-      modelRemote: data.contents,
-      activeDocId: doc.id
-    })
-  } catch (error) {
-    logger.error(error)
-  }
+//     setState({
+//       model: data.contents,
+//       modelRemote: data.contents,
+//       activeDocId: doc.id
+//     })
+//   } catch (error) {
+//     logger.error(error)
+//   }
 
-  handleState({ isLoading: false })
-}
+//   handleState({ isLoading: false })
+// }
 
 class StateHandler extends React.Component {
   state = {}
