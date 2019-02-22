@@ -1,0 +1,25 @@
+{
+  "name": "cms-backend",
+  "version": "1.0.0",
+  "description": "rest api for cms",
+  "main": "index.js",
+  "author": "Pedro P",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn db:stop && yarn db:start && yarn sls:offline",
+    "sls:offline": "sls offline --stage local",
+    "db:start": "docker-compose up --detach --build && aws dynamodb create-table --cli-input-json file://offline/migrations/docs.json --endpoint-url http://localhost:8000 --region localhost",
+    "db:stop": "docker-compose down",
+    "dev:cloud": "sls deploy --stage dev",
+    "prod:cloud": "sls deploy --stage prod"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.404.0",
+    "serverless": "^1.37.1",
+    "serverless-offline": "^4.4.2"
+  },
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}

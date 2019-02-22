@@ -1,0 +1,6 @@
+httpMethod: POST
+body: '{
+  "parentId": 1234567,
+  "title": "ABC DEF",
+  "contents": "<div>ASDF 12345</div>"
+}'
