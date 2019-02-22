@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/wysiwyg-to-react/static/js/runtime~main.a315b0bf.js"
   },
   {
-    "revision": "d4b02471e92f6223843c",
-    "url": "/wysiwyg-to-react/static/js/main.d4b02471.chunk.js"
+    "revision": "873fcedd17f19f93957a",
+    "url": "/wysiwyg-to-react/static/js/main.873fcedd.chunk.js"
   },
   {
     "revision": "7baebfe21503ac51f08f",
     "url": "/wysiwyg-to-react/static/js/2.7baebfe2.chunk.js"
   },
   {
-    "revision": "d4b02471e92f6223843c",
+    "revision": "873fcedd17f19f93957a",
     "url": "/wysiwyg-to-react/static/css/main.053f48e5.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/wysiwyg-to-react/static/css/2.9c0f612e.chunk.css"
   },
   {
-    "revision": "21cfbd9e5d340098ae63939162a1497a",
+    "revision": "31cd181572ab5d667b7cc30eea75e80a",
     "url": "/wysiwyg-to-react/index.html"
   }
 ];
