@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  # To see the DynamoDB UI visit http://localhost:8000/shell
-  db:
-    image: amazon/dynamodb-local
-    ports:
-      - "8000:8000"
