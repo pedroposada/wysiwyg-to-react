@@ -1,6 +1,7 @@
 import React from 'react'
 import logger from './logger'
 import scriptjs from 'scriptjs'
+import { CKEDITOR_PATH } from './constants'
 
 class Wysiwyg extends React.Component {
   static defaultProps = {
@@ -23,7 +24,7 @@ class Wysiwyg extends React.Component {
     try {
       if (!window.CKEDITOR) {
         await new Promise((resolve, reject) => scriptjs.get(
-          '/ckeditor/ckeditor.js'
+          `${CKEDITOR_PATH}/ckeditor/ckeditor.js`
           , resolve
           , reject
         ))
