@@ -68,7 +68,11 @@ class App extends React.Component {
     clipboard.on('success', e => {
       // logger.debug(e)
 
-      Notification.success('React component copied to clipboard successfully!')
+      Notification.success({
+        title: 'Copied',
+        message: 'React component copied to clipboard successfully!',
+        offset: 100
+      })
     })
 
     clipboard.on('error', e => {
@@ -468,6 +472,7 @@ const Actions = props => {
         <Button
           onClick={_ => setState({ mode: 'edit' })}
           disabled={mode === 'edit'}
+          type={'primary'}
         >
               EDIT
         </Button>
@@ -508,6 +513,7 @@ export default ExportedComponent
           }
           }
           disabled={mode === 'export' || !model}
+          type={'success'}
         >
               EXPORT to REACT
         </Button>
