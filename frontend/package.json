@@ -1,0 +1,60 @@
+{
+  "name": "cms-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://pedroposada.github.io/wysiwyg-to-react",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:dev": "./node_modules/.bin/env-cmd ./.env.dev yarn build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy:github": "./node_modules/.bin/env-cmd ./.env.github yarn build",
+    "deploy:github": "gh-pages -d build",
+    "deploy:dev": "sls syncToS3 --stage dev",
+    "predeploy:dev": "yarn build:dev",
+    "postdeploy:dev": "sls invalidateCache --stage dev; sls domainInfo --stage dev",
+    "dev:cloud": "sls deploy --stage dev",
+    "deploy:prod": "sls syncToS3 --stage prod",
+    "postdeploy:prod": "sls invalidateCache --stage prod; sls domainInfo --stage prod",
+    "prod:cloud": "sls deploy --stage prod"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "ckeditor4-react": "^0.1.0",
+    "clipboard": "^2.0.4",
+    "codemirror": "^5.43.0",
+    "element-react": "^1.4.32",
+    "element-theme-default": "^1.4.13",
+    "emotion": "^10.0.7",
+    "htmltojsx": "^0.3.0",
+    "lodash.isequal": "^4.5.0",
+    "moment": "^2.24.0",
+    "pino": "^5.11.1",
+    "pretty": "^2.0.0",
+    "react": "^16.8.1",
+    "react-codemirror": "^1.0.0",
+    "react-codemirror2": "^5.1.0",
+    "react-dom": "^16.8.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "scriptjs": "^2.5.9"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "gh-pages": "^2.0.1",
+    "serverless": "^1.37.1",
+    "serverless-plugin-cloudfront-lambda-edge": "^2.1.0",
+    "serverless-s3-cloudfront-plugin": "https://github.com/pedroposada/serverless-s3-cloudfront-plugin.git",
+    "standard": "^12.0.1"
+  }
+}
